@@ -11,3 +11,11 @@ pipeline runs core tests, Android lint and debug assembly for both apps.
 Debug APKs use a development signing key. Stable release signing, store delivery,
 full accessibility/device tests and complete product quality gates remain open.
 GitHub serves as a source mirror; CI runs on Gitea Linux runners.
+
+## Successful build
+
+Gitea run 559, commit b5d4bb6ac88fd7b0b78ddec0e95a983958499783:
+`:core:test`, both `lintDebug` tasks and both `assembleDebug` tasks passed.
+Gradle reported BUILD SUCCESSFUL in 3m 43s. Artifact `teapilot-debug-apks`
+contains two APKs, 45,247,277 raw bytes (15,700,356 uploaded bytes).
+https://git.tracht-digital.de/Tracht-Digital-Solutions/TeaPilot/actions/runs/559
