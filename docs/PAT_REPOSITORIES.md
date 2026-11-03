@@ -37,3 +37,12 @@ Gitea CI runs these tests, both lint checks and both debug APK builds.
 
 No credentialed device or emulator integration test has been performed yet.
 Wear OS authentication, OAuth and persistent multiple accounts are later work.
+
+## Login hardening (0.2.1-dev, issue #7)
+
+If anonymous version discovery returns HTTP 401 or 403, discovery is retried
+with the submitted token against the same configured server. Other failures,
+including redirects, do not trigger that authenticated retry. Authentication
+must succeed before repositories are requested. Raw server input and tokens
+use only non-saveable Compose state; raw addresses may themselves contain
+accidentally pasted credentials and must not enter saved-state Bundles.

@@ -48,16 +48,12 @@ class SessionViewModel : ViewModel() {
             state = SessionState(busy = true)
             try {
                 val client = GiteaApi(GiteaTransport(server))
-                val result = withContext(Dispatchers.IO) {
-                    val version = client.version()
-                    val username = client.username(credential)
-                    Triple(version, username, client.repositories(credential, 1))
-                }
+                val result = withContext(Dispatchers.IO) { client.signIn(credential) }
                 api = client
                 token = credential
                 page = 1
-                state = SessionState(username = result.second, server = server.value, version = result.first,
-                    repositories = result.third.repositories, hasNext = result.third.hasNext)
+                state = SessionState(username = result.username, server = server.value, version = result.version,
+                    repositories = result.page.repositories, hasNext = result.page.hasNext)
             } catch (error: Exception) {
                 if (error is CancellationException) throw error
                 state = SessionState(error = message(error))

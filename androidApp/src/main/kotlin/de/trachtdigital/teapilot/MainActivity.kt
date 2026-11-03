@@ -10,7 +10,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -84,7 +83,8 @@ private fun TeaPilotScreen(model: SessionViewModel = viewModel()) {
 
 @Composable
 private fun LoginForm(busy: Boolean, login: (String, String) -> Unit) {
-    var address by rememberSaveable { mutableStateOf("") }
+    // Raw input can itself contain credentials; never persist it before validation.
+    var address by remember { mutableStateOf("") }
     // A token must never enter Bundle-backed rememberSaveable state.
     var token by remember { mutableStateOf("") }
     Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
