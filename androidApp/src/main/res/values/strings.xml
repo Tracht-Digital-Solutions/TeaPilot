@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TeaPilot</string>
+    <string name="tagline">Dein Gitea. Dein Überblick.</string>
+    <string name="login_intro">Verbinde deinen Gitea-Server und entdecke deine Repositories.</string>
+    <string name="server">Gitea-Server (HTTPS)</string>
+    <string name="token">Persönlicher Zugriffstoken</string>
+    <string name="scopes">Benötigte Leserechte: read:user und read:repository. Ein auf bestimmte Repositories beschränkter Token zeigt nur diese an.</string>
+    <string name="login">Anmelden</string>
+    <string name="signed_in">Angemeldet als %1$s</string>
+    <string name="refresh">Aktualisieren</string>
+    <string name="logout">Abmelden</string>
+    <string name="repositories">Repositories</string>
+    <string name="private_repository">Privat</string>
+    <string name="public_repository">Öffentlich</string>
+    <string name="empty_repositories">Für diesen Token sind keine Repositories vorhanden.</string>
+    <string name="load_more">Weitere laden</string>
+    <string name="session_notice">Dein Token bleibt nur für diese Sitzung im Arbeitsspeicher. Nach dem Beenden der App meldest du dich erneut an. Keine Telemetrie.</string>
+</resources>

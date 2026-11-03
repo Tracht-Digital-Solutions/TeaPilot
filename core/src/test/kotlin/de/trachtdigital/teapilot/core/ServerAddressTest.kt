@@ -9,7 +9,7 @@ class ServerAddressTest {
         assertEquals("https://git.example.org/gitea", ServerAddress.parse("https://git.example.org/gitea/").getOrThrow().value)
     }
     @Test fun rejectsCredentialsAndInsecureTransport() {
-        listOf("http://git.example.org", "https://user:secret@git.example.org", "https://git.example.org?token=secret", "https://git.example.org#part").forEach {
+        listOf("http://git.example.org", "https://user:secret@git.example.org", "https://git.example.org?token=secret", "https://git.example.org#part", "https://git.example.org/a/../b", "https://git.example.org/%2e%2e/api").forEach {
             assertTrue(ServerAddress.parse(it).isFailure)
         }
     }

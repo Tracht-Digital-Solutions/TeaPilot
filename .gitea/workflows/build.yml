@@ -22,7 +22,7 @@ jobs:
         with:
           gradle-version: '8.14.3'
       - name: Test and build both apps
-        run: gradle --no-daemon :core:test :androidApp:lintDebug :wearApp:lintDebug :androidApp:assembleDebug :wearApp:assembleDebug
+        run: gradle --no-daemon :core:test :androidApp:testDebugUnitTest :androidApp:lintDebug :wearApp:lintDebug :androidApp:assembleDebug :wearApp:assembleDebug
       - uses: https://github.com/actions/upload-artifact@v3
         with:
           name: teapilot-debug-apks
