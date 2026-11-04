@@ -1,5 +1,9 @@
 # TeaPilot
 
+Product scope: [docs/SPECIFICATION.md](docs/SPECIFICATION.md).
+Unresolved decisions: [docs/OPEN_DECISIONS.md](docs/OPEN_DECISIONS.md).
+Tasks and milestones: [Gitea project board](https://git.tracht-digital.de/Tracht-Digital-Solutions/TeaPilot/projects/36).
+
 Native Gitea client for Android 10+ and Wear OS by Tracht Digital Solutions.
 
 Android now supports HTTPS server discovery, personal access token sign-in and
